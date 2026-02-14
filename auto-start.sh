@@ -1,5 +1,5 @@
 #!/bin/bash
-# Berelz Analyzer - Auto-start Background Service
+# BerelzDashboard - Auto-start Background Service
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 LOG_FILE="$SCRIPT_DIR/dashboard.log"
@@ -16,7 +16,7 @@ case "$1" in
             fi
         fi
 
-        echo "🚀 Starting Berelz XAUEUR Analyzer..."
+        echo "🚀 Starting BerelzDashboard..."
         cd "$SCRIPT_DIR"
         nohup python3 server.py > "$LOG_FILE" 2>&1 &
         echo $! > "$PID_FILE"

@@ -1,6 +1,6 @@
 # 🎨 Graphics & Assets
 
-Visual assets for the Berelz XAUEUR Analyzer Dashboard.
+Visual assets for the BerelzDashboard Dashboard.
 
 ## 📁 Folder Structure
 

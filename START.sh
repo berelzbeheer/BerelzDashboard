@@ -1,10 +1,10 @@
 #!/bin/bash
-# Berelz Analyzer - Quick Start
+# BerelzDashboard - Quick Start
 
 cd "$(dirname "$0")"
 
 echo "╔══════════════════════════════════════════════════════════╗"
-echo "║  🚀 Berelz XAUEUR Analyzer - Quick Start               ║"
+echo "║  🚀 BerelzDashboard - Quick Start               ║"
 echo "╚══════════════════════════════════════════════════════════╝"
 echo ""
 

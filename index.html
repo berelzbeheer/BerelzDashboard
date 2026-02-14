@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berelz XAUEUR Analyzer - Launcher</title>
+    <title>BerelzDashboard - Launcher</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -100,7 +100,11 @@
 </head>
 <body>
     <div class="launcher">
-        <h1>⚡ Berelz XAUEUR Analyzer</h1>
+        <h1>⚡ BerelzDashboard</h1>
+        <p class="info" style="text-align:center; margin-bottom: 10px;">
+            Free trading dashboard for <a href="https://www.mql5.com/en/market" style="color:#00ff88;">BerelzBridge Pro</a> users.<br>
+            10 indicators, live prices, signals and position calculator.
+        </p>
 
         <div class="status" id="status">
             <p class="info">🔍 Checking server status...</p>
@@ -132,7 +136,7 @@
 
     <script>
         const SERVER_URL = 'http://localhost:8080';
-        const DASHBOARD_URL = SERVER_URL + '/BerelzAnalyzer.html';
+        const DASHBOARD_URL = SERVER_URL + '/BerelzDashboard.html';
 
         async function checkServer() {
             const status = document.getElementById('status');
@@ -155,7 +159,7 @@
                 status.innerHTML = `
                     <p class="error">❌ Server Not Running</p>
                     <p class="info" style="margin-top: 10px;">
-                        The analyzer server needs to be started first.
+                        The dashboard server needs to be started first.
                     </p>
                 `;
                 document.getElementById('actions').style.display = 'none';

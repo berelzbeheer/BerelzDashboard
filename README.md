@@ -41,7 +41,7 @@ MetaTrader 5 ──► BerelzBridge Pro ──► JSON file ──► server.py 
 
 1. **BerelzBridge Pro** exports live market data to a JSON file every 2 seconds
 2. **server.py** reads the JSON and serves the dashboard + API
-3. **BerelzAnalyzer.html** displays everything in a real-time web interface
+3. **BerelzDashboard.html** displays everything in a real-time web interface
 
 ## Start Options
 
@@ -55,13 +55,13 @@ MetaTrader 5 ──► BerelzBridge Pro ──► JSON file ──► server.py 
 
 ```
 BerelzDashboard/
-├── BerelzAnalyzer.html    # Main dashboard UI
+├── BerelzDashboard.html    # Main dashboard UI
 ├── server.py              # Python server + data processing
 ├── MT5_LiveExport.mq5     # Optional: standalone MT5 data exporter
 ├── START.sh               # One-command launcher
 ├── INSTALL.sh             # Auto-start installer (macOS)
 ├── auto-start.sh          # Background service manager
-├── com.berelz.analyzer.plist  # macOS LaunchAgent config
+├── com.berelz.dashboard.plist  # macOS LaunchAgent config
 ├── index.html             # Browser-based launcher
 └── graphics/              # Logos and assets
 ```

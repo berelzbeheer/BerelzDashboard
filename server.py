@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Berelz Analyzer Server - HIGH PERFORMANCE VERSION
+BerelzDashboard Server - HIGH PERFORMANCE VERSION
 Optimized for speed and reliability
 """
 
@@ -1747,7 +1747,7 @@ class DashboardHandler(http.server.SimpleHTTPRequestHandler):
                 self.wfile.write(json.dumps(cot).encode())
 
             elif self.path == '/' or self.path == '/index.html':
-                self.path = '/BerelzAnalyzer.html'
+                self.path = '/BerelzDashboard.html'
                 return http.server.SimpleHTTPRequestHandler.do_GET(self)
             else:
                 return http.server.SimpleHTTPRequestHandler.do_GET(self)

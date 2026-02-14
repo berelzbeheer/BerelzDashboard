@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.berelz.analyzer</string>
+    <string>com.berelz.dashboard</string>
 
     <key>ProgramArguments</key>
     <array>

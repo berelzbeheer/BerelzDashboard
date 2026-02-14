@@ -1,12 +1,12 @@
 #!/bin/bash
-# Berelz Analyzer - Auto-Start Installer
+# BerelzDashboard - Auto-Start Installer
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-PLIST_FILE="com.berelz.analyzer.plist"
+PLIST_FILE="com.berelz.dashboard.plist"
 LAUNCH_AGENTS_DIR="$HOME/Library/LaunchAgents"
 
 echo "╔══════════════════════════════════════════════════════════╗"
-echo "║  Berelz XAUEUR Analyzer - Auto-Start Installer         ║"
+echo "║  BerelzDashboard - Auto-Start Installer         ║"
 echo "╚══════════════════════════════════════════════════════════╝"
 echo ""
 
