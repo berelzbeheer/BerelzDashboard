@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berelz XAUEUR Analyzer - Launcher</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .launcher {
+            max-width: 600px;
+            background: rgba(42, 42, 60, 0.9);
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        h1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .status {
+            background: rgba(0,0,0,0.3);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .btn {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 18px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        .btn:active {
+            transform: translateY(0);
+        }
+        .btn-secondary {
+            background: linear-gradient(135deg, #434343 0%, #000000 100%);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+        .command-box {
+            background: #000;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 13px;
+            color: #0f0;
+            margin: 15px 0;
+            cursor: pointer;
+            user-select: all;
+            border: 1px solid #0f0;
+        }
+        .command-box:hover {
+            background: #1a1a1a;
+            border-color: #00ff00;
+        }
+        .spinner {
+            border: 3px solid rgba(102, 126, 234, 0.3);
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .success { color: #00ff88; }
+        .error { color: #ff4444; }
+        .info { color: #667eea; font-size: 14px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="launcher">
+        <h1>⚡ Berelz XAUEUR Analyzer</h1>
+
+        <div class="status" id="status">
+            <p class="info">🔍 Checking server status...</p>
+            <div class="spinner"></div>
+        </div>
+
+        <div id="actions" style="display: none;">
+            <button class="btn" onclick="openDashboard()">
+                🚀 Open Dashboard
+            </button>
+
+            <button class="btn btn-secondary" onclick="showManual()">
+                📖 Manual Setup
+            </button>
+        </div>
+
+        <div id="manual" style="display: none;">
+            <h3 style="color: #667eea; margin: 20px 0 10px;">Quick Start Command:</h3>
+            <div class="command-box" onclick="copyCommand(this)" title="Click to copy">
+                cd ~/BerelzDashboard && ./START.sh
+            </div>
+            <p class="info">👆 Click to copy, then paste in Terminal</p>
+
+            <button class="btn" onclick="checkAgain()" style="margin-top: 20px;">
+                ✅ I Started It - Check Again
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const SERVER_URL = 'http://localhost:8080';
+        const DASHBOARD_URL = SERVER_URL + '/BerelzAnalyzer.html';
+
+        async function checkServer() {
+            const status = document.getElementById('status');
+
+            try {
+                const response = await fetch(SERVER_URL + '/api/data', {
+                    method: 'GET',
+                    signal: AbortSignal.timeout(3000)
+                });
+
+                if (response.ok) {
+                    status.innerHTML = `
+                        <p class="success">✅ Server is Running!</p>
+                        <p class="info" style="margin-top: 10px;">Dashboard is ready to use</p>
+                    `;
+                    document.getElementById('actions').style.display = 'block';
+                    return true;
+                }
+            } catch (error) {
+                status.innerHTML = `
+                    <p class="error">❌ Server Not Running</p>
+                    <p class="info" style="margin-top: 10px;">
+                        The analyzer server needs to be started first.
+                    </p>
+                `;
+                document.getElementById('actions').style.display = 'none';
+                document.getElementById('manual').style.display = 'block';
+                return false;
+            }
+        }
+
+        function openDashboard() {
+            window.location.href = DASHBOARD_URL;
+        }
+
+        function showManual() {
+            document.getElementById('manual').style.display = 'block';
+        }
+
+        function copyCommand(element) {
+            const text = element.textContent.trim();
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = element.textContent;
+                element.textContent = '✅ Copied! Paste in Terminal';
+                element.style.background = '#00ff00';
+                element.style.color = '#000';
+                setTimeout(() => {
+                    element.textContent = originalText;
+                    element.style.background = '#000';
+                    element.style.color = '#0f0';
+                }, 2000);
+            });
+        }
+
+        async function checkAgain() {
+            const status = document.getElementById('status');
+            status.innerHTML = '<p class="info">🔄 Checking server...</p><div class="spinner"></div>';
+            document.getElementById('manual').style.display = 'none';
+
+            for (let i = 0; i < 5; i++) {
+                const running = await checkServer();
+                if (running) return;
+
+                status.innerHTML = `<p class="info">🔄 Attempt ${i + 1}/5... waiting...</p><div class="spinner"></div>`;
+                await new Promise(resolve => setTimeout(resolve, 2000));
+            }
+
+            status.innerHTML = `
+                <p class="error">❌ Server Still Not Running</p>
+                <p class="info" style="margin-top: 10px;">
+                    Make sure to run the command in Terminal
+                </p>
+            `;
+            document.getElementById('manual').style.display = 'block';
+        }
+
+        // Auto-check on load
+        checkServer();
+    </script>
+</body>
+</html>
