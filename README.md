@@ -4,8 +4,6 @@ Free real-time trading dashboard template for **BerelzBridge Pro** users.
 
 Reads the JSON data exported by [BerelzBridge Pro](https://www.mql5.com/en/market) and displays a full multi-indicator analysis dashboard in your browser.
 
-![BerelzDashboard](graphics/logos/Berelz%20800.PNG)
-
 ## What you get
 
 - **10 technical indicators** with weighted signal system (SMA, EMA, RSI, MACD, Bollinger Bands, Stochastic, ATR, ADX, Support/Resistance, Volume)
