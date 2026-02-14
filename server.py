@@ -34,7 +34,7 @@ MT5_FILES_PATHS = [
     Path.home() / "AppData/Roaming/MetaQuotes/Terminal",  # Windows (scans for terminal ID)
 ]
 MT5_FILES_PATH = next((p for p in MT5_FILES_PATHS if p.exists()), MT5_FILES_PATHS[0])
-MT5_DATA_FILES = ["xaueur_stream.json", "xaueur_live.json", "xaueur_data.json"]
+MT5_DATA_FILES = ["xaueur_stream.json", "xaueur_m5.json", "xaueur_h1.json", "xaueur_live.json", "xaueur_data.json"]
 
 # Cache settings (optimized)
 PRICE_CACHE_TTL = 5        # 5 seconds for price data
