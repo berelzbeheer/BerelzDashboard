@@ -55,7 +55,6 @@ MetaTrader 5 ──► BerelzBridge Pro ──► JSON file ──► server.py 
 BerelzDashboard/
 ├── BerelzDashboard.html    # Main dashboard UI
 ├── server.py              # Python server + data processing
-├── MT5_LiveExport.mq5     # Optional: standalone MT5 data exporter
 ├── START.sh               # One-command launcher
 ├── INSTALL.sh             # Auto-start installer (macOS)
 ├── auto-start.sh          # Background service manager
