@@ -25,7 +25,7 @@ Reads the JSON data exported by [BerelzBridge Pro](https://www.mql5.com/en/marke
 ## Quick Start
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/BerelzDashboard.git
+git clone https://github.com/berelzbeheer/BerelzDashboard.git
 cd BerelzDashboard
 ./START.sh
 ```
