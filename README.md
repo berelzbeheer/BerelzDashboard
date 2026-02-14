@@ -21,6 +21,7 @@ Reads the JSON data exported by [BerelzBridge Pro](https://www.mql5.com/en/marke
 - **BerelzBridge Pro** indicator running in MetaTrader 5 ([Get it on MQL5 Market](https://www.mql5.com/en/market))
 - Python 3.8+
 - Any modern web browser
+- **macOS**, **Windows** or **Linux**
 
 ## Quick Start
 
@@ -69,8 +70,11 @@ BerelzDashboard/
 
 The server auto-detects your MT5 data files at:
 
-- **macOS**: `~/Library/Application Support/net.metaquotes.wine.metatrader5/drive_c/Program Files/MetaTrader 5/MQL5/Files/`
-- **Windows**: `C:\Users\YOU\AppData\Roaming\MetaQuotes\Terminal\YOUR_ID\MQL5\Files\`
+| Platform | Path |
+|----------|------|
+| **macOS** | `~/Library/Application Support/net.metaquotes.wine.metatrader5/drive_c/Program Files/MetaTrader 5/MQL5/Files/` |
+| **Windows** | `C:\Users\YOU\AppData\Roaming\MetaQuotes\Terminal\YOUR_ID\MQL5\Files\` |
+| **Linux** | `~/.wine/drive_c/Program Files/MetaTrader 5/MQL5/Files/` |
 
 If no BerelzBridge Pro data is found, the dashboard runs with sample data so you can preview it.
 

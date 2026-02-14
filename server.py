@@ -27,9 +27,11 @@ ssl_context.verify_mode = ssl.CERT_NONE
 
 # Configuration
 PORT = 8080
-# Support multiple computers
+# Support multiple platforms
 MT5_FILES_PATHS = [
-    Path.home() / "Library/Application Support/net.metaquotes.wine.metatrader5/drive_c/Program Files/MetaTrader 5/MQL5/Files",  # Current machine (auto-detect)
+    Path.home() / "Library/Application Support/net.metaquotes.wine.metatrader5/drive_c/Program Files/MetaTrader 5/MQL5/Files",  # macOS (Wine)
+    Path.home() / ".wine/drive_c/Program Files/MetaTrader 5/MQL5/Files",  # Linux (Wine)
+    Path.home() / "AppData/Roaming/MetaQuotes/Terminal",  # Windows (scans for terminal ID)
 ]
 MT5_FILES_PATH = next((p for p in MT5_FILES_PATHS if p.exists()), MT5_FILES_PATHS[0])
 MT5_DATA_FILES = ["xaueur_stream.json", "xaueur_live.json", "xaueur_data.json"]

@@ -5,6 +5,7 @@
 1. **BerelzBridge Pro** running in MetaTrader 5 ([Get it on MQL5 Market](https://www.mql5.com/en/market))
 2. **Python 3.8+** installed
 3. **MetaTrader 5** with at least one chart open
+4. Works on **macOS**, **Windows** and **Linux**
 
 ## Step 1: Download
 
@@ -25,11 +26,15 @@ Or download as ZIP from the [releases page](https://github.com/berelzbeheer/Bere
 
 ## Step 3: Start the Dashboard
 
+**All platforms:**
+```bash
+python3 server.py
+```
+
+**macOS shortcut:**
 ```bash
 ./START.sh
 ```
-
-Choose option 1 (foreground), 2 (background) or 3 (auto-start at boot).
 
 The dashboard opens at **http://localhost:8080**
 
@@ -41,15 +46,15 @@ The server auto-detects your MT5 files at:
 |----------|------|
 | **macOS** | `~/Library/Application Support/net.metaquotes.wine.metatrader5/drive_c/Program Files/MetaTrader 5/MQL5/Files/` |
 | **Windows** | `C:\Users\YOU\AppData\Roaming\MetaQuotes\Terminal\YOUR_ID\MQL5\Files\` |
-| **VPS** | Same as Windows, check your terminal ID in MT5 Help > About |
+| **Linux** | `~/.wine/drive_c/Program Files/MetaTrader 5/MQL5/Files/` |
 
-## Auto-Start at Boot (macOS)
+## Auto-Start at Boot (macOS only)
 
 ```bash
 ./INSTALL.sh
 ```
 
-This installs a LaunchAgent that starts the dashboard automatically when you log in.
+This installs a macOS LaunchAgent that starts the dashboard automatically when you log in.
 
 To uninstall:
 ```bash
@@ -57,7 +62,7 @@ launchctl unload ~/Library/LaunchAgents/com.berelz.dashboard.plist
 rm ~/Library/LaunchAgents/com.berelz.dashboard.plist
 ```
 
-## Service Management
+## Service Management (macOS only)
 
 ```bash
 ./auto-start.sh start     # Start in background
