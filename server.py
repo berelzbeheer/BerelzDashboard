@@ -32,7 +32,7 @@ MT5_FILES_PATHS = [
     Path.home() / "Library/Application Support/net.metaquotes.wine.metatrader5/drive_c/Program Files/MetaTrader 5/MQL5/Files",  # Current machine (auto-detect)
 ]
 MT5_FILES_PATH = next((p for p in MT5_FILES_PATHS if p.exists()), MT5_FILES_PATHS[0])
-MT5_DATA_FILES = ["xaueur_live.json", "xaueur_data.json"]
+MT5_DATA_FILES = ["xaueur_stream.json", "xaueur_live.json", "xaueur_data.json"]
 
 # Cache settings (optimized)
 PRICE_CACHE_TTL = 5        # 5 seconds for price data

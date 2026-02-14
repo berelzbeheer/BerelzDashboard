@@ -76,6 +76,12 @@ If BerelzBridge Pro is not running, the dashboard shows sample data so you can p
 - **BerelzBridge Pro**: [MQL5 Market Support](https://www.mql5.com/en/market)
 - **Dashboard issues**: [GitHub Issues](https://github.com/berelzbeheer/BerelzDashboard/issues)
 
+## Disclaimer
+
+This dashboard is a **free community template** provided as-is. It is **not officially supported** by Berelz Capital Engineering. No warranty, no guaranteed updates, no support obligations. Use at your own risk.
+
+For issues with **BerelzBridge Pro** (the MT5 indicator), use the [MQL5 Market support page](https://www.mql5.com/en/market).
+
 ---
 
 (c) 2025 Berelz Capital Engineering

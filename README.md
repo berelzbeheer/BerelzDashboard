@@ -4,6 +4,8 @@ Free real-time trading dashboard template for **BerelzBridge Pro** users.
 
 Reads the JSON data exported by [BerelzBridge Pro](https://www.mql5.com/en/market) and displays a full multi-indicator analysis dashboard in your browser.
 
+![BerelzDashboard](graphics/screenshots/BerelzDasboard%20Main.png)
+
 ## What you get
 
 - **10 technical indicators** with weighted signal system (SMA, EMA, RSI, MACD, Bollinger Bands, Stochastic, ATR, ADX, Support/Resistance, Volume)
@@ -87,6 +89,12 @@ If no BerelzBridge Pro data is found, the dashboard runs with sample data so you
 This dashboard is designed to work with **BerelzBridge Pro**, a MetaTrader 5 indicator that exports live market data (9 timeframes, account info, spread, daily stats) to a clean JSON file.
 
 **[Get BerelzBridge Pro on MQL5 Market](https://www.mql5.com/en/market)**
+
+## Disclaimer
+
+This dashboard is a **free community template** provided as-is. It is **not officially supported** by Berelz Capital Engineering. No warranty, no guaranteed updates, no support obligations. Use at your own risk.
+
+For issues with **BerelzBridge Pro** (the MT5 indicator), use the [MQL5 Market support page](https://www.mql5.com/en/market).
 
 ---
 
