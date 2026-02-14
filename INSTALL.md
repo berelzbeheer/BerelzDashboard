@@ -2,10 +2,17 @@
 
 ## Prerequisites
 
-1. **BerelzBridge Pro** running in MetaTrader 5 ([Get it on MQL5 Market](https://www.mql5.com/en/market))
+1. **BerelzBridge Pro** or **BerelzBridge Free** running in MetaTrader 5 ([MQL5 Market](https://www.mql5.com/en/market))
 2. **Python 3.8+** installed
 3. **MetaTrader 5** with at least one chart open
 4. Works on **macOS**, **Windows** and **Linux**
+
+## Free vs Pro
+
+The dashboard works with both versions, but features differ:
+
+- **BerelzBridge Free** — main dashboard page only (1 timeframe, 50 bars, basic price data)
+- **BerelzBridge Pro** — full dashboard with all pages (9 timeframes, 500 bars, account info, spread, daily stats)
 
 ## Step 1: Download
 
@@ -16,11 +23,11 @@ cd BerelzDashboard
 
 Or download as ZIP from the [releases page](https://github.com/berelzbeheer/BerelzDashboard/releases).
 
-## Step 2: Install BerelzBridge Pro in MT5
+## Step 2: Install BerelzBridge in MT5
 
-1. Purchase **BerelzBridge Pro** from the [MQL5 Market](https://www.mql5.com/en/market)
+1. Download **BerelzBridge Free** or purchase **BerelzBridge Pro** from the [MQL5 Market](https://www.mql5.com/en/market)
 2. It installs automatically in MT5: Navigator > Indicators > Market
-3. Drag **BerelzBridge Pro** onto any chart
+3. Drag **BerelzBridge** onto any chart
 4. Enable the timeframes you need, click OK
 5. The JSON file appears in `MQL5/Files/` (e.g. `xaueur_stream.json`)
 
@@ -74,7 +81,7 @@ rm ~/Library/LaunchAgents/com.berelz.dashboard.plist
 
 ## No Data Yet?
 
-If BerelzBridge Pro is not running, the dashboard shows sample data so you can preview all features. Once BerelzBridge Pro starts exporting JSON, the dashboard picks it up automatically.
+If BerelzBridge is not running, the dashboard shows sample data so you can preview the interface. Once BerelzBridge starts exporting JSON, the dashboard picks it up automatically.
 
 ## Support
 

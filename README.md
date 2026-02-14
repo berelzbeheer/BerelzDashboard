@@ -16,9 +16,24 @@ Reads the JSON data exported by [BerelzBridge Pro](https://www.mql5.com/en/marke
 - **Position size calculator** with risk management
 - Auto-refreshes every 60 seconds
 
+## Free vs Pro
+
+| Feature | BerelzBridge Free | BerelzBridge Pro |
+|---------|-------------------|------------------|
+| Dashboard main page | Yes (limited data) | Yes (full data) |
+| Multi-timeframe analysis | No (1 timeframe only) | Yes (all 9 timeframes) |
+| Account & equity monitoring | No | Yes |
+| Spread & daily stats | No | Yes |
+| Position calculator (live) | No (manual input) | Yes (auto from account) |
+| Bars for indicators | 50 | 500 (configurable) |
+
+The dashboard works with the **Free version** but only the main page with basic price data is available. For the full experience (multi-timeframe analysis, account monitoring, position calculator with live data), **BerelzBridge Pro** is required.
+
+**[Get BerelzBridge Pro on MQL5 Market](https://www.mql5.com/en/market)**
+
 ## Requirements
 
-- **BerelzBridge Pro** indicator running in MetaTrader 5 ([Get it on MQL5 Market](https://www.mql5.com/en/market))
+- **BerelzBridge Pro** or **BerelzBridge Free** running in MetaTrader 5
 - Python 3.8+
 - Any modern web browser
 - **macOS**, **Windows** or **Linux**
@@ -28,42 +43,41 @@ Reads the JSON data exported by [BerelzBridge Pro](https://www.mql5.com/en/marke
 ```bash
 git clone https://github.com/berelzbeheer/BerelzDashboard.git
 cd BerelzDashboard
-./START.sh
+python3 server.py
 ```
 
-The dashboard opens automatically at **http://localhost:8080**
+The dashboard opens at **http://localhost:8080**
+
+macOS users can also run `./START.sh` for guided setup.
 
 ## How it works
 
 ```
-MetaTrader 5 ──► BerelzBridge Pro ──► JSON file ──► server.py ──► Dashboard
+MetaTrader 5 ──> BerelzBridge Pro ──> JSON file ──> server.py ──> Dashboard
                   (MQL5 Market)       (MQL5/Files/)   (localhost:8080)
 ```
 
-1. **BerelzBridge Pro** exports live market data to a JSON file every 2 seconds
+1. **BerelzBridge** exports live market data to a JSON file
 2. **server.py** reads the JSON and serves the dashboard + API
 3. **BerelzDashboard.html** displays everything in a real-time web interface
 
-## Start Options
+## Installation
 
-| Method | Command | Description |
-|--------|---------|-------------|
-| Foreground | `./START.sh` → choose 1 | Run in terminal, Ctrl+C to stop |
-| Background | `./START.sh` → choose 2 | Runs as background process |
-| Auto-start | `./START.sh` → choose 3 | Starts automatically at boot (macOS) |
+See [INSTALL.md](INSTALL.md) for detailed setup instructions for all platforms.
 
 ## File Structure
 
 ```
 BerelzDashboard/
-├── BerelzDashboard.html    # Main dashboard UI
-├── server.py              # Python server + data processing
-├── START.sh               # One-command launcher
-├── INSTALL.sh             # Auto-start installer (macOS)
-├── auto-start.sh          # Background service manager
-├── com.berelz.dashboard.plist  # macOS LaunchAgent config
-├── index.html             # Browser-based launcher
-└── graphics/              # Logos and assets
+├── BerelzDashboard.html         # Main dashboard UI
+├── server.py                    # Python server + data processing
+├── START.sh                     # One-command launcher (macOS)
+├── INSTALL.sh                   # Auto-start installer (macOS)
+├── auto-start.sh                # Background service manager (macOS)
+├── com.berelz.dashboard.plist   # macOS LaunchAgent config
+├── index.html                   # Browser-based launcher
+├── INSTALL.md                   # Installation guide
+└── graphics/                    # Screenshots
 ```
 
 ## Configuration
@@ -76,9 +90,9 @@ The server auto-detects your MT5 data files at:
 | **Windows** | `C:\Users\YOU\AppData\Roaming\MetaQuotes\Terminal\YOUR_ID\MQL5\Files\` |
 | **Linux** | `~/.wine/drive_c/Program Files/MetaTrader 5/MQL5/Files/` |
 
-If no BerelzBridge Pro data is found, the dashboard runs with sample data so you can preview it.
+If no BerelzBridge data is found, the dashboard runs with sample data so you can preview it.
 
-## Service Management (macOS)
+## Service Management (macOS only)
 
 ```bash
 ./auto-start.sh start     # Start in background
@@ -88,17 +102,11 @@ If no BerelzBridge Pro data is found, the dashboard runs with sample data so you
 ./auto-start.sh logs      # View live logs
 ```
 
-## Get BerelzBridge Pro
-
-This dashboard is designed to work with **BerelzBridge Pro**, a MetaTrader 5 indicator that exports live market data (9 timeframes, account info, spread, daily stats) to a clean JSON file.
-
-**[Get BerelzBridge Pro on MQL5 Market](https://www.mql5.com/en/market)**
-
 ## Disclaimer
 
 This dashboard is a **free community template** provided as-is. It is **not officially supported** by Berelz Capital Engineering. No warranty, no guaranteed updates, no support obligations. Use at your own risk.
 
-For issues with **BerelzBridge Pro** (the MT5 indicator), use the [MQL5 Market support page](https://www.mql5.com/en/market).
+For support with **BerelzBridge Pro** (the MT5 indicator), use the [MQL5 Market support page](https://www.mql5.com/en/market).
 
 ---
 
