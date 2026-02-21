@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BerelzBridge — FAQ</title>
+<style>
+* {box-sizing:border-box;margin:0;padding:0;}
+body {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0f1117;color:#c8cdd7;line-height:1.6;}
+a {color:#4a90a4;text-decoration:none;} a:hover {color:#c8a96e;}
+.hdr {background:linear-gradient(135deg,#1a1d26,#0f1117);border-bottom:2px solid #c8a96e;padding:18px 32px;display:flex;align-items:center;gap:16px;}
+.hdr img {width:42px;height:42px;border-radius:8px;}
+.hdr-text {flex:1;}
+.hdr-text h1 {font-size:1.3rem;font-weight:700;color:#e8ecf2;line-height:1.1;}
+.hdr-text span {font-size:.64rem;color:#c8a96e;letter-spacing:.13em;text-transform:uppercase;}
+.hdr-right {margin-left:auto;text-align:right;}
+.hdr-right a {font-size:.76rem;color:#c8a96e;border:1px solid #c8a96e44;padding:5px 12px;border-radius:5px;}
+.hdr-right a:hover {background:#c8a96e22;}
+.nav {background:#1a1d26;border-bottom:1px solid #2a2e3d;padding:0 32px;display:flex;gap:2px;flex-wrap:wrap;}
+.nav a {color:#788096;font-size:.76rem;text-decoration:none;padding:8px 12px;border-bottom:2px solid transparent;white-space:nowrap;}
+.nav a:hover,.nav a.active {color:#c8a96e;border-bottom-color:#c8a96e;}
+.nav .sep {color:#2a2e3d;padding:8px 4px;font-size:.76rem;}
+.wrap {max-width:960px;margin:0 auto;padding:28px 20px;}
+.sumcard {background:linear-gradient(135deg,#1a1d26,#161924);border:1px solid #c8a96e44;border-radius:9px;padding:24px 28px;margin-bottom:18px;}
+.sumcard h2 {font-size:1.05rem;font-weight:700;color:#e8ecf2;margin-bottom:8px;}
+.sumcard p {font-size:.86rem;color:#9aa0b0;line-height:1.7;}
+.card {background:#1a1d26;border:1px solid #2a2e3d;border-radius:9px;padding:22px;margin-bottom:18px;}
+.ct {font-size:.67rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#c8a96e;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid #2a2e3d;}
+h2 {font-size:.95rem;font-weight:600;color:#e8ecf2;margin:18px 0 8px;}
+h3 {font-size:.86rem;font-weight:600;color:#c8a96e;margin:14px 0 6px;}
+p {font-size:.86rem;color:#c8cdd7;line-height:1.78;margin-bottom:10px;}
+ul,ol {margin:6px 0 10px 20px;font-size:.86rem;color:#c8cdd7;line-height:1.78;}
+li {margin-bottom:4px;}
+strong {color:#e8ecf2;}
+hr {border:none;border-top:1px solid #2a2e3d;margin:18px 0;}
+.coaching {background:#0a0c12;border-radius:7px;border-left:4px solid #4a90a4;padding:16px 20px;margin-bottom:12px;}
+.coaching p {font-size:.88rem;line-height:1.8;font-style:italic;margin:0;}
+.act {display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #1e2130;}
+.act:last-child {border-bottom:none;}
+.an {width:26px;height:26px;border-radius:50%;background:#c8a96e22;border:1px solid #c8a96e66;color:#c8a96e;font-size:.74rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.at {font-size:.84rem;color:#c8cdd7;line-height:1.55;}
+.at strong {display:block;margin-bottom:4px;color:#e8ecf2;font-size:.86rem;}
+.at p {font-size:.84rem;color:#9aa0b0;line-height:1.65;margin:0;}
+.chip {padding:3px 10px;border-radius:20px;font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;display:inline-block;margin:2px 2px 2px 0;}
+.cg {background:#1a2e1a;color:#50a064;} .cb {background:#1e2a30;color:#4a90a4;}
+.cy {background:#2a2610;color:#c8a96e;} .cr {background:#2a1414;color:#a05050;}
+.co {background:#2a1e10;color:#c87840;}
+.row {display:flex;justify-content:space-between;align-items:flex-start;padding:8px 0;border-bottom:1px solid #1e2130;}
+.row:last-child {border-bottom:none;}
+.rn {font-size:.82rem;color:#788096;min-width:160px;} .rv {font-size:.82rem;font-weight:600;text-align:right;}
+pre {background:#0a0c12;border:1px solid #2a2e3d;border-radius:6px;padding:16px;font-size:.78rem;color:#50a064;overflow-x:auto;line-height:1.6;margin:10px 0;}
+code {font-family:'JetBrains Mono','Fira Code','Courier New',monospace;}
+table {width:100%;border-collapse:collapse;margin:10px 0;}
+th {font-size:.72rem;font-weight:700;color:#c8a96e;text-align:left;padding:8px 10px;border-bottom:1px solid #2a2e3d;text-transform:uppercase;letter-spacing:.07em;}
+td {font-size:.82rem;color:#c8cdd7;padding:8px 10px;border-bottom:1px solid #1e2130;vertical-align:top;}
+tr:last-child td {border-bottom:none;}
+td:first-child {color:#788096;}
+td strong {color:#e8ecf2;}
+.g2 {display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;}
+@media(max-width:600px){.g2{grid-template-columns:1fr;}}
+.idx-card {background:#0f1117;border:1px solid #2a2e3d;border-radius:8px;padding:16px;text-decoration:none;display:block;transition:border-color .18s;}
+.idx-card:hover {border-color:#c8a96e66;}
+.idx-card .ict {font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#c8a96e;margin-bottom:6px;}
+.idx-card h3 {color:#e8ecf2;font-size:.86rem;font-weight:600;margin:0 0 5px;}
+.idx-card p {font-size:.75rem;color:#788096;margin:0;line-height:1.5;}
+.g3 {display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px;}
+@media(max-width:680px){.g3{grid-template-columns:1fr;}}
+.link-row {display:flex;gap:14px;margin-top:14px;flex-wrap:wrap;}
+.link-row a {color:#4a90a4;font-size:.82rem;}
+.link-row a:hover {color:#c8a96e;}
+.ftr {border-top:1px solid #2a2e3d;padding:14px 32px;display:flex;justify-content:space-between;font-size:.7rem;color:#788096;margin-top:20px;}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <img src="images/Berelz_200x200.png" alt="Berelz">
+  <div class="hdr-text">
+    <h1>BerelzBridge</h1>
+    <span>MT5 &rarr; JSON Data Bridge</span>
+  </div>
+  <div class="hdr-right">
+    <a href="https://www.mql5.com/en/market/product/165398" target="_blank" rel="noopener">Get Pro on MQL5 &rarr;</a>
+  </div>
+</header>
+
+<nav class="nav">
+  <a href="index.html">Hub</a>
+  <span class="sep">|</span>
+  <a href="about.html">About</a>
+  <a href="installation.html">Install</a>
+  <a href="output.html">JSON Output</a>
+  <a href="settings.html">Settings</a>
+  <a href="free-vs-pro.html">Free vs Pro</a>
+  <a href="quickstart.html">Quick Start</a>
+  <a href="faq.html" class="active">FAQ</a>
+  <span class="sep">|</span>
+  <a href="https://github.com/berelzbeheer/BerelzDashboard" target="_blank" rel="noopener">Dashboard &#8599;</a>
+  <a href="https://www.mql5.com/en/market/product/165398" target="_blank" rel="noopener">MQL5 &#8599;</a>
+</nav>
+
+<div class="wrap">
+
+  <div class="card">
+    <div class="ct">Frequently Asked Questions</div>
+
+    <div class="act">
+      <div class="an">1</div>
+      <div class="at">
+        <strong>Does it slow down MT5?</strong>
+        <p>No. BerelzBridge uses a timer event and writes a text file. CPU usage is negligible. It has no drawings, no extra indicator windows, and no visual output on the chart.</p>
+      </div>
+    </div>
+
+    <div class="act">
+      <div class="an">2</div>
+      <div class="at">
+        <strong>Can I use it with Expert Advisors?</strong>
+        <p>Yes. BerelzBridge is an indicator with zero chart plots. It does not interfere with any EA running on the same chart or other charts.</p>
+      </div>
+    </div>
+
+    <div class="act">
+      <div class="an">3</div>
+      <div class="at">
+        <strong>Does it work in the Strategy Tester?</strong>
+        <p>No. MT5 indicators cannot use EventSetTimer in the Strategy Tester. BerelzBridge is designed for live charts and demo accounts only.</p>
+      </div>
+    </div>
+
+    <div class="act">
+      <div class="an">4</div>
+      <div class="at">
+        <strong>Can I export only specific timeframes?</strong>
+        <p>Yes (Pro only). Each timeframe M1 through MN1 has its own toggle. Enable only the timeframes your application needs &mdash; this keeps the JSON file smaller and faster to write.</p>
+      </div>
+    </div>
+
+    <div class="act">
+      <div class="an">5</div>
+      <div class="at">
+        <strong>Is the data delayed?</strong>
+        <p>No. BerelzBridge reads directly from the broker data feed at each update interval. The data is as current as your broker provides it.</p>
+      </div>
+    </div>
+
+    <div class="act">
+      <div class="an">6</div>
+      <div class="at">
+        <strong>Can I stream to a remote server?</strong>
+        <p>BerelzBridge writes to a local file. To send data remotely, read the JSON file with Python or Node.js and push it to your server via HTTP POST, WebSocket, or any other protocol. BerelzBridge itself stays local.</p>
+      </div>
+    </div>
+
+    <div class="act">
+      <div class="an">7</div>
+      <div class="at">
+        <strong>What is the difference between Free and Pro?</strong>
+        <p>Free: 1 timeframe, 50 bars, bid/ask only, 5-second interval. Pro: all 9 timeframes, up to 500 bars each, spread, daily stats, account info, broker info, 2-second interval.</p>
+      </div>
+    </div>
+
+    <div class="act">
+      <div class="an">8</div>
+      <div class="at">
+        <strong>Where is my JSON file?</strong>
+        <p>
+          <strong>macOS:</strong> <code>~/Library/Application Support/net.metaquotes.wine.metatrader5/drive_c/Program Files/MetaTrader 5/MQL5/Files/</code><br>
+          <strong>Windows:</strong> <code>C:\Users\YOU\AppData\Roaming\MetaQuotes\Terminal\YOURID\MQL5\Files\</code>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<footer class="ftr">
+  <span>BerelzBridge &mdash; Berelz Capital Engineering &mdash; 2025</span>
+  <span>MT5 &rarr; JSON Data Bridge</span>
+</footer>
+
+</body>
+</html>

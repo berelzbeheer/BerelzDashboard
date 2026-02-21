@@ -2,7 +2,7 @@
 
 Free real-time trading dashboard for **BerelzBridge Pro** users.
 
-Reads the JSON data exported by [BerelzBridge Pro](https://www.mql5.com/en/market) and displays a full multi-indicator analysis dashboard in your browser. No coding required.
+Reads the JSON data exported by [BerelzBridge Pro](https://www.mql5.com/en/market/product/165398) and displays a full multi-indicator analysis dashboard in your browser. No coding required.
 
 ![BerelzDashboard](graphics/screenshots/BerelzDasboard%20Main.png)
 
@@ -29,7 +29,7 @@ git clone https://github.com/berelzbeheer/BerelzDashboard.git
 Or [download as ZIP](https://github.com/berelzbeheer/BerelzDashboard/archive/refs/heads/main.zip) and unzip.
 
 **Step 2** — Make sure **BerelzBridge Pro** is running on a chart in MetaTrader 5.
-Don't have it yet? [Get it on MQL5 Market](https://www.mql5.com/en/market)
+Don't have it yet? [Get it on MQL5 Market](https://www.mql5.com/en/market/product/165398)
 
 **Step 3** — Start the dashboard:
 ```bash
@@ -55,7 +55,7 @@ See [INSTALL.md](INSTALL.md) for detailed instructions and troubleshooting.
 
 The dashboard works with the **Free version** but only the main page with basic price data is available. For the full experience, **BerelzBridge Pro** is required.
 
-**[Get BerelzBridge Pro on MQL5 Market](https://www.mql5.com/en/market)**
+**[Get BerelzBridge Pro on MQL5 Market](https://www.mql5.com/en/market/product/165398)**
 
 ---
 
@@ -154,7 +154,7 @@ BerelzDashboard/
 
 This dashboard is a **free community template** provided as-is. It is **not officially supported** by Berelz Capital Engineering. No warranty, no guaranteed updates, no support obligations. Use at your own risk.
 
-For support with **BerelzBridge Pro** (the MT5 indicator), use the [MQL5 Market support page](https://www.mql5.com/en/market).
+For support with **BerelzBridge Pro** (the MT5 indicator), use the [MQL5 Market support page](https://www.mql5.com/en/market/product/165398).
 
 ---
 

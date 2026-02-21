@@ -7,6 +7,6 @@ m5_cache.json
 backtest_data.json
 dashboard.log
 dashboard.pid
-*.ex5
+BerelzBridgePro.ex5
 *.mq5
 *.mqh

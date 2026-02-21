@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BerelzBridge — Free vs Pro</title>
+<style>
+* {box-sizing:border-box;margin:0;padding:0;}
+body {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0f1117;color:#c8cdd7;line-height:1.6;}
+a {color:#4a90a4;text-decoration:none;} a:hover {color:#c8a96e;}
+.hdr {background:linear-gradient(135deg,#1a1d26,#0f1117);border-bottom:2px solid #c8a96e;padding:18px 32px;display:flex;align-items:center;gap:16px;}
+.hdr img {width:42px;height:42px;border-radius:8px;}
+.hdr-text {flex:1;}
+.hdr-text h1 {font-size:1.3rem;font-weight:700;color:#e8ecf2;line-height:1.1;}
+.hdr-text span {font-size:.64rem;color:#c8a96e;letter-spacing:.13em;text-transform:uppercase;}
+.hdr-right {margin-left:auto;text-align:right;}
+.hdr-right a {font-size:.76rem;color:#c8a96e;border:1px solid #c8a96e44;padding:5px 12px;border-radius:5px;}
+.hdr-right a:hover {background:#c8a96e22;}
+.nav {background:#1a1d26;border-bottom:1px solid #2a2e3d;padding:0 32px;display:flex;gap:2px;flex-wrap:wrap;}
+.nav a {color:#788096;font-size:.76rem;text-decoration:none;padding:8px 12px;border-bottom:2px solid transparent;white-space:nowrap;}
+.nav a:hover,.nav a.active {color:#c8a96e;border-bottom-color:#c8a96e;}
+.nav .sep {color:#2a2e3d;padding:8px 4px;font-size:.76rem;}
+.wrap {max-width:960px;margin:0 auto;padding:28px 20px;}
+.sumcard {background:linear-gradient(135deg,#1a1d26,#161924);border:1px solid #c8a96e44;border-radius:9px;padding:24px 28px;margin-bottom:18px;}
+.sumcard h2 {font-size:1.05rem;font-weight:700;color:#e8ecf2;margin-bottom:8px;}
+.sumcard p {font-size:.86rem;color:#9aa0b0;line-height:1.7;}
+.card {background:#1a1d26;border:1px solid #2a2e3d;border-radius:9px;padding:22px;margin-bottom:18px;}
+.ct {font-size:.67rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#c8a96e;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid #2a2e3d;}
+h2 {font-size:.95rem;font-weight:600;color:#e8ecf2;margin:18px 0 8px;}
+h3 {font-size:.86rem;font-weight:600;color:#c8a96e;margin:14px 0 6px;}
+p {font-size:.86rem;color:#c8cdd7;line-height:1.78;margin-bottom:10px;}
+ul,ol {margin:6px 0 10px 20px;font-size:.86rem;color:#c8cdd7;line-height:1.78;}
+li {margin-bottom:4px;}
+strong {color:#e8ecf2;}
+hr {border:none;border-top:1px solid #2a2e3d;margin:18px 0;}
+.coaching {background:#0a0c12;border-radius:7px;border-left:4px solid #4a90a4;padding:16px 20px;margin-bottom:12px;}
+.coaching p {font-size:.88rem;line-height:1.8;font-style:italic;margin:0;}
+.act {display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #1e2130;}
+.act:last-child {border-bottom:none;}
+.an {width:26px;height:26px;border-radius:50%;background:#c8a96e22;border:1px solid #c8a96e66;color:#c8a96e;font-size:.74rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.at {font-size:.84rem;color:#c8cdd7;line-height:1.55;}
+.at strong {display:block;margin-bottom:2px;color:#e8ecf2;}
+.chip {padding:3px 10px;border-radius:20px;font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;display:inline-block;margin:2px 2px 2px 0;}
+.cg {background:#1a2e1a;color:#50a064;} .cb {background:#1e2a30;color:#4a90a4;}
+.cy {background:#2a2610;color:#c8a96e;} .cr {background:#2a1414;color:#a05050;}
+.co {background:#2a1e10;color:#c87840;}
+.row {display:flex;justify-content:space-between;align-items:flex-start;padding:8px 0;border-bottom:1px solid #1e2130;}
+.row:last-child {border-bottom:none;}
+.rn {font-size:.82rem;color:#788096;min-width:160px;} .rv {font-size:.82rem;font-weight:600;text-align:right;}
+pre {background:#0a0c12;border:1px solid #2a2e3d;border-radius:6px;padding:16px;font-size:.78rem;color:#50a064;overflow-x:auto;line-height:1.6;margin:10px 0;}
+code {font-family:'JetBrains Mono','Fira Code','Courier New',monospace;}
+table {width:100%;border-collapse:collapse;margin:10px 0;}
+th {font-size:.72rem;font-weight:700;color:#c8a96e;text-align:left;padding:8px 10px;border-bottom:1px solid #2a2e3d;text-transform:uppercase;letter-spacing:.07em;}
+td {font-size:.82rem;color:#c8cdd7;padding:8px 10px;border-bottom:1px solid #1e2130;vertical-align:top;}
+tr:last-child td {border-bottom:none;}
+td:first-child {color:#788096;}
+td strong {color:#e8ecf2;}
+.g2 {display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;}
+@media(max-width:600px){.g2{grid-template-columns:1fr;}}
+.idx-card {background:#0f1117;border:1px solid #2a2e3d;border-radius:8px;padding:16px;text-decoration:none;display:block;transition:border-color .18s;}
+.idx-card:hover {border-color:#c8a96e66;}
+.idx-card .ict {font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#c8a96e;margin-bottom:6px;}
+.idx-card h3 {color:#e8ecf2;font-size:.86rem;font-weight:600;margin:0 0 5px;}
+.idx-card p {font-size:.75rem;color:#788096;margin:0;line-height:1.5;}
+.g3 {display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px;}
+@media(max-width:680px){.g3{grid-template-columns:1fr;}}
+.link-row {display:flex;gap:14px;margin-top:14px;flex-wrap:wrap;}
+.link-row a {color:#4a90a4;font-size:.82rem;}
+.link-row a:hover {color:#c8a96e;}
+.ftr {border-top:1px solid #2a2e3d;padding:14px 32px;display:flex;justify-content:space-between;font-size:.7rem;color:#788096;margin-top:20px;}
+/* comparison table column colouring */
+td.free-val {color:#50a064;}
+td.pro-val {color:#c8a96e;}
+td.both-val {color:#4a90a4;}
+td.no-val {color:#788096;}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <img src="images/Berelz_200x200.png" alt="Berelz">
+  <div class="hdr-text">
+    <h1>BerelzBridge</h1>
+    <span>MT5 &rarr; JSON Data Bridge</span>
+  </div>
+  <div class="hdr-right">
+    <a href="https://www.mql5.com/en/market/product/165398" target="_blank" rel="noopener">Get Pro on MQL5 &rarr;</a>
+  </div>
+</header>
+
+<nav class="nav">
+  <a href="index.html">Hub</a>
+  <span class="sep">|</span>
+  <a href="about.html">About</a>
+  <a href="installation.html">Install</a>
+  <a href="output.html">JSON Output</a>
+  <a href="settings.html">Settings</a>
+  <a href="free-vs-pro.html" class="active">Free vs Pro</a>
+  <a href="quickstart.html">Quick Start</a>
+  <a href="faq.html">FAQ</a>
+  <span class="sep">|</span>
+  <a href="https://github.com/berelzbeheer/BerelzDashboard" target="_blank" rel="noopener">Dashboard &#8599;</a>
+  <a href="https://www.mql5.com/en/market/product/165398" target="_blank" rel="noopener">MQL5 &#8599;</a>
+</nav>
+
+<div class="wrap">
+
+  <div class="card">
+    <div class="ct">Free vs Pro &mdash; Feature Comparison</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>BerelzBridge Free</th>
+          <th>BerelzBridge Pro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Timeframes</td>
+          <td class="free-val">1 (selectable)</td>
+          <td class="pro-val"><strong>All 9</strong> (M1&ndash;MN1, each toggleable)</td>
+        </tr>
+        <tr>
+          <td>Bars per timeframe</td>
+          <td class="free-val">50 (fixed)</td>
+          <td class="pro-val"><strong>Up to 500</strong> (configurable)</td>
+        </tr>
+        <tr>
+          <td>Update interval</td>
+          <td class="free-val">5 seconds</td>
+          <td class="pro-val"><strong>2 seconds</strong> (configurable)</td>
+        </tr>
+        <tr>
+          <td>Bid / Ask</td>
+          <td class="both-val">Yes</td>
+          <td class="both-val">Yes</td>
+        </tr>
+        <tr>
+          <td>Spread in points</td>
+          <td class="no-val">No</td>
+          <td class="pro-val"><strong>Yes</strong></td>
+        </tr>
+        <tr>
+          <td>Daily high/low/open</td>
+          <td class="no-val">No</td>
+          <td class="pro-val"><strong>Yes</strong></td>
+        </tr>
+        <tr>
+          <td>Tick volume</td>
+          <td class="no-val">No</td>
+          <td class="pro-val"><strong>Yes</strong></td>
+        </tr>
+        <tr>
+          <td>Account info</td>
+          <td class="no-val">No</td>
+          <td class="pro-val"><strong>Yes</strong> (balance, equity, margin, profit, leverage)</td>
+        </tr>
+        <tr>
+          <td>Broker info</td>
+          <td class="no-val">No</td>
+          <td class="pro-val"><strong>Yes</strong> (company name, server name)</td>
+        </tr>
+        <tr>
+          <td>Multiple instances</td>
+          <td class="both-val">Yes</td>
+          <td class="both-val">Yes</td>
+        </tr>
+        <tr>
+          <td>No DLL</td>
+          <td class="both-val">Yes</td>
+          <td class="both-val">Yes</td>
+        </tr>
+        <tr>
+          <td>Price</td>
+          <td class="free-val"><strong>Free</strong></td>
+          <td class="pro-val"><strong>Paid</strong> (MQL5 Market)</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="coaching">
+      <p>The Free version is sufficient for reading price bars in one timeframe. The Pro version is required for multi-timeframe analysis, account monitoring, spread data, and full BerelzDashboard functionality.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">Download / Purchase</div>
+    <div class="act">
+      <div class="an">&#8595;</div>
+      <div class="at">
+        <strong>BerelzBridge Free</strong>
+        <a href="../BerelzBridgeFree.ex5" download>BerelzBridgeFree.ex5</a> &nbsp;<span class="chip cg">FREE</span>
+      </div>
+    </div>
+    <div class="act">
+      <div class="an">&#8599;</div>
+      <div class="at">
+        <strong>BerelzBridge Pro</strong>
+        <a href="https://www.mql5.com/en/market/product/165398" target="_blank" rel="noopener">mql5.com/en/market/product/165398</a> &nbsp;<span class="chip cy">MQL5 MARKET</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="ftr">
+  <span>BerelzBridge &mdash; Berelz Capital Engineering &mdash; 2025</span>
+  <span>MT5 &rarr; JSON Data Bridge</span>
+</footer>
+
+</body>
+</html>
